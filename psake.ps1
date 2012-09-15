@@ -18,7 +18,10 @@ param(
   [Parameter(Position=5, Mandatory=0)]
   [System.Collections.Hashtable]$properties = @{}
 )
-
+$currentThread = [System.Threading.Thread]::CurrentThread
+$invariantCulture = [System.Globalization.CultureInfo]::InvariantCulture
+$currentThread.CurrentCulture = $invariantCulture
+$currentThread.CurrentUICulture = $invariantCulture
 remove-module psake -ea 'SilentlyContinue'
 $scriptPath = Split-Path -parent $MyInvocation.MyCommand.path
 import-module (join-path $scriptPath psake.psm1)

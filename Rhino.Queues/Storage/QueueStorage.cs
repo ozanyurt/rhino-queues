@@ -95,7 +95,8 @@ namespace Rhino.Queues.Storage
 				TempDirectory = Path.Combine(path, "temp"),
 				SystemDirectory = Path.Combine(path, "system"),
 				LogFileDirectory = Path.Combine(path, "logs"),
-				MaxVerPages = 8192,
+        //MaxVerPages = 8192,
+        MaxVerPages = 131072,
 				MaxTemporaryTables = 8192
 			};
 		}
